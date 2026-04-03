@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://saadbeg-pixel.github.io/repair-tronics/sitemap.xml
