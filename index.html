@@ -213,9 +213,36 @@
         .mobile-nav { display: none; }
         .nav-desktop { display: flex; gap: 24px; align-items: center; }
 
+        /* ===== GALLERY ===== */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 16px;
+        }
+        .gallery-item {
+            border-radius: var(--radius);
+            overflow: hidden;
+            border: 1px solid var(--border);
+            background: white;
+        }
+        .gallery-item img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.3s;
+        }
+        .gallery-item:hover img { transform: scale(1.05); }
+        .gallery-caption {
+            padding: 12px 16px;
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--text-secondary);
+        }
+
         /* ===== HERO ===== */
         .hero {
-            background: linear-gradient(135deg, #1e3a8a 0%, #1a56db 50%, #2563eb 100%);
+            background: linear-gradient(135deg, rgba(30,58,138,0.92) 0%, rgba(26,86,219,0.88) 100%), url('images/workshop-table.jpg') center/cover no-repeat;
             color: white;
             padding: 60px 20px 80px;
             text-align: center;
@@ -919,6 +946,38 @@
         </div>
     </section>
 
+    <!-- Gallery -->
+    <section id="gallery">
+        <div class="section-inner">
+            <div class="section-title">
+                <h2>Inside Our Workshop</h2>
+                <p>Real photos from our repair center - see the quality of work we deliver</p>
+            </div>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="images/motherboard-repair.jpg" alt="Motherboard repair at Repair Tronics Delhi" loading="lazy">
+                    <div class="gallery-caption">Motherboard & Circuit Board Repair</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/workshop-table.jpg" alt="Repair Tronics workshop with multiple TVs being serviced" loading="lazy">
+                    <div class="gallery-caption">Our Workshop - Multiple TVs Under Repair</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/technician-repairing.jpg" alt="Technician repairing LED TV at Repair Tronics" loading="lazy">
+                    <div class="gallery-caption">Our Technician at Work</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/spare-parts.jpg" alt="Genuine spare parts for TV repair at Repair Tronics" loading="lazy">
+                    <div class="gallery-caption">100% Genuine Spare Parts in Stock</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/shop-banner.jpg" alt="Repair Tronics - Trusted LED TV Repair Service in Delhi" loading="lazy">
+                    <div class="gallery-caption">Trusted LED TV Repair Service in Delhi</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Reviews -->
     <section id="reviews">
         <div class="section-inner">
@@ -927,39 +986,29 @@
                 <p>Real reviews from real customers on Google Maps</p>
             </div>
             <div class="reviews-grid" id="reviews-grid">
-                <!-- PLACEHOLDER REVIEWS - Will be replaced with real Google reviews -->
-                <div class="review-card">
-                    <div class="review-header">
-                        <div class="review-avatar">P</div>
-                        <div>
-                            <div class="review-name">Priya Sharma</div>
-                            <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-                        </div>
-                    </div>
-                    <div class="review-text">"My Samsung 55 inch TV had a backlight issue. Intizar bhai fixed it the same day and charged very reasonably. Genuine parts used. Highly recommend!"</div>
-                    <div class="review-source">&#127759; Google Review</div>
-                </div>
-                <div class="review-card">
-                    <div class="review-header">
-                        <div class="review-avatar">R</div>
-                        <div>
-                            <div class="review-name">Rahul Verma</div>
-                            <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-                        </div>
-                    </div>
-                    <div class="review-text">"Excellent service! My LG TV had lines on the screen. They explained the issue clearly, gave an upfront price and fixed it perfectly. Very honest people."</div>
-                    <div class="review-source">&#127759; Google Review</div>
-                </div>
                 <div class="review-card">
                     <div class="review-header">
                         <div class="review-avatar">A</div>
                         <div>
-                            <div class="review-name">Anita Gupta</div>
+                            <div class="review-name">Ayan</div>
                             <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
                         </div>
                     </div>
-                    <div class="review-text">"Was about to buy a new TV but Repair Tronics saved my Sony TV at 1/4th the cost. Professional service with warranty. Thank you!"</div>
-                    <div class="review-source">&#127759; Google Review</div>
+                    <div class="review-text">"I am satisfied with the service, It's very quick and comparatively cheap. Best for LG LED LCD TV repair service center."</div>
+                    <img src="images/review-ayan.jpg" alt="TV repaired by Repair Tronics - Review by Ayan" style="width:100%; border-radius:8px; margin-top:12px; height:180px; object-fit:cover;">
+                    <div class="review-source">&#127759; Google Review - Verified Customer</div>
+                </div>
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="review-avatar">N</div>
+                        <div>
+                            <div class="review-name">Nishit Agarwal</div>
+                            <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                        </div>
+                    </div>
+                    <div class="review-text">"Loved the service. My TV repaired at low cost. Thanks!"</div>
+                    <img src="images/review-nishit.jpg" alt="Smart TV repaired by Repair Tronics - Review by Nishit Agarwal" style="width:100%; border-radius:8px; margin-top:12px; height:180px; object-fit:cover;">
+                    <div class="review-source">&#127759; Google Review - Verified Customer</div>
                 </div>
             </div>
             <p style="text-align:center; margin-top:24px;">
