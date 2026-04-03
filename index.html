@@ -212,6 +212,72 @@
         }
         .mobile-nav { display: none; }
         .nav-desktop { display: flex; gap: 24px; align-items: center; }
+        .nav-dropdown { position: relative; }
+        .nav-dropdown-trigger {
+            text-decoration: none;
+            color: var(--text-secondary);
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: color 0.2s;
+        }
+        .nav-dropdown-trigger:hover { color: var(--primary); }
+        .nav-dropdown-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: -12px;
+            margin-top: 12px;
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            box-shadow: var(--shadow-lg);
+            min-width: 200px;
+            z-index: 200;
+            padding: 8px 0;
+        }
+        .nav-dropdown:hover .nav-dropdown-menu { display: block; }
+        .nav-dropdown-menu a {
+            display: block;
+            padding: 10px 16px;
+            font-size: 14px;
+            color: var(--text);
+            text-decoration: none;
+            font-weight: 500;
+            transition: background 0.2s;
+        }
+        .nav-dropdown-menu a:hover { background: #f1f5f9; color: var(--primary); }
+
+        /* ===== BLOG CARDS ===== */
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        .blog-card {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 28px 24px;
+            transition: box-shadow 0.3s, transform 0.2s;
+            text-decoration: none;
+            color: var(--text);
+            display: block;
+        }
+        .blog-card:hover { box-shadow: var(--shadow-lg); transform: translateY(-4px); }
+        .blog-tag {
+            display: inline-block;
+            background: #eff6ff;
+            color: var(--primary);
+            font-size: 12px;
+            font-weight: 600;
+            padding: 4px 10px;
+            border-radius: 50px;
+            margin-bottom: 12px;
+        }
+        .blog-card h3 { font-size: 17px; font-weight: 700; margin-bottom: 8px; line-height: 1.4; }
+        .blog-card p { font-size: 14px; color: var(--text-secondary); line-height: 1.6; }
+        .blog-read-more { color: var(--primary); font-weight: 600; font-size: 14px; margin-top: 12px; display: inline-block; }
 
         /* ===== GALLERY ===== */
         .gallery-grid {
@@ -727,7 +793,17 @@
             <nav class="nav-desktop">
                 <a href="#services">Services</a>
                 <a href="#why-us">Why Us</a>
+                <a href="#gallery">Gallery</a>
                 <a href="#reviews">Reviews</a>
+                <div class="nav-dropdown">
+                    <a href="#" class="nav-dropdown-trigger">Brands &#9662;</a>
+                    <div class="nav-dropdown-menu">
+                        <a href="samsung-tv-repair-delhi.html">Samsung TV Repair</a>
+                        <a href="lg-tv-repair-delhi.html">LG TV Repair</a>
+                        <a href="sony-tv-repair-delhi.html">Sony TV Repair</a>
+                    </div>
+                </div>
+                <a href="#blog">Blog</a>
                 <a href="#contact">Contact</a>
             </nav>
 
@@ -747,7 +823,12 @@
         <div class="mobile-nav">
             <a href="#services" onclick="this.parentElement.classList.remove('open')">Services</a>
             <a href="#why-us" onclick="this.parentElement.classList.remove('open')">Why Us</a>
+            <a href="#gallery" onclick="this.parentElement.classList.remove('open')">Gallery</a>
             <a href="#reviews" onclick="this.parentElement.classList.remove('open')">Reviews</a>
+            <a href="samsung-tv-repair-delhi.html">Samsung TV Repair</a>
+            <a href="lg-tv-repair-delhi.html">LG TV Repair</a>
+            <a href="sony-tv-repair-delhi.html">Sony TV Repair</a>
+            <a href="#blog" onclick="this.parentElement.classList.remove('open')">Blog</a>
             <a href="#contact" onclick="this.parentElement.classList.remove('open')">Contact</a>
         </div>
     </header>
@@ -1069,6 +1150,36 @@
             <p style="text-align:center; margin-top:24px;">
                 <a href="https://www.google.com/maps/place/Repair+Tronics/@28.5667929,77.2750903,17z/data=!4m8!3m7!1s0x390ce37a5897ac85:0x38219e84f6e940da!8m2!3d28.5667882!4d77.2776652!9m1!1b1!16s%2Fg%2F11pvmlgk8h" target="_blank" rel="noopener" style="color:var(--primary); font-weight:600; text-decoration:none;">See all reviews on Google Maps &rarr;</a>
             </p>
+        </div>
+    </section>
+
+    <!-- Blog -->
+    <section id="blog" style="background:var(--bg-light);">
+        <div class="section-inner">
+            <div class="section-title">
+                <h2>Helpful Guides & Tips</h2>
+                <p>Expert advice to help you understand your TV problems before calling</p>
+            </div>
+            <div class="blog-grid">
+                <a href="blog/led-tv-repair-cost-delhi.html" class="blog-card">
+                    <span class="blog-tag">Pricing Guide</span>
+                    <h3>LED TV Repair Cost in Delhi - Complete Price Guide (2025)</h3>
+                    <p>Backlight repair, panel replacement, motherboard fix - know the real costs before you call any technician. Avoid overcharging.</p>
+                    <span class="blog-read-more">Read Full Guide &rarr;</span>
+                </a>
+                <a href="blog/backlight-repair-vs-panel-replacement.html" class="blog-card">
+                    <span class="blog-tag">Expert Advice</span>
+                    <h3>Backlight Repair vs Panel Replacement - Which One Do You Need?</h3>
+                    <p>TV screen dark but sound works? Learn the simple torch test to diagnose your problem and save thousands on unnecessary repairs.</p>
+                    <span class="blog-read-more">Read Full Guide &rarr;</span>
+                </a>
+                <a href="blog/smart-tv-not-connecting-wifi.html" class="blog-card">
+                    <span class="blog-tag">Troubleshooting</span>
+                    <h3>Smart TV Not Connecting to WiFi? Try These 7 Fixes</h3>
+                    <p>Step-by-step troubleshooting guide for Samsung, LG, Sony & MI smart TVs. Fix it yourself or know when to call a professional.</p>
+                    <span class="blog-read-more">Read Full Guide &rarr;</span>
+                </a>
+            </div>
         </div>
     </section>
 
